@@ -117,7 +117,8 @@ private extension ShoppingCartViewController {
     @objc func orderButtonTapped() {
         guard let place = Orders.shared.selectedPlace else { return }
         Orders.shared.makeOrder(products: products, place: place)
-        navigationController?.popToRootViewController(animated: true)
+        navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     func makeOrder() {
@@ -150,7 +151,7 @@ extension ShoppingCartViewController: UITableViewDelegate {
         products.remove(at: indexPath.row)
         tableView.reloadData()
         setupDisableOrderButton()
-        notification.display(.deleted)
+        notification.display(text: "Usunięto z koszyka", .red)
     }
 }
 

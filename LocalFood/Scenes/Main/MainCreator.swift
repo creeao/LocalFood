@@ -1,18 +1,18 @@
 //
-//  MapControllerCreator.swift
+//  MainCreator.swift
 //  LocalFood
 //
-//  Created by Eryk Chrustek on 21/11/2021.
+//  Created by Eryk Chrustek on 12/03/2022.
 //
 
 import UIKit
 
-struct MapCreator {
+struct MainCreator {
     func getViewController() -> UIViewController {
-        let interactor = MapInteractor()
-        let presenter = MapPresenter()
-        let router = MapRouter()
-        let viewController = MapViewController()
+        let interactor = MainInteractor()
+        let presenter = MainPresenter()
+        let router = MainRouter()
+        let viewController = MainViewController()
 
         router.viewController = viewController
         viewController.interactor = interactor

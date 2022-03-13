@@ -11,8 +11,7 @@ import UIKit
 
 protocol RegistrationBusinessLogic: AnyObject {
     var presenter: RegistrationPresenting? { get }
-    func prepareContent(request: Registration.Content.Request)
-    func makeOrder(request: Registration.MakeOrder.Request)
+    func register(request: Registration.Register.Request)
 }
 
 protocol RegistrationDataStore: class {
@@ -24,7 +23,7 @@ protocol RegistrationDataStore: class {
 typealias RegistrationPresenting = RegistrationPresentationLogic & RegistrationPresentationSetup
 
 protocol RegistrationPresentationLogic {
-    func presentContent(response: Registration.Content.Response)
+    func presentRegisterResult(response: Registration.Register.Response)
 }
 
 protocol RegistrationPresentationSetup {
@@ -34,7 +33,7 @@ protocol RegistrationPresentationSetup {
 // MARK: - View Controller
 
 protocol RegistrationDisplayLogic: AnyObject {
-    func displayContent(viewModel: Registration.Content.ViewModel)
+    func displayRegisterResult(viewModel: Registration.Register.ViewModel)
 }
 
 // MARK: - Router

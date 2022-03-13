@@ -17,8 +17,7 @@ final class RegistrationPresenter: RegistrationPresentationSetup {
 
 // MARK: RegistrationPresentationLogic
 extension RegistrationPresenter: RegistrationPresentationLogic {
-    func presentContent(response: Registration.Content.Response) {
-        let viewModel = Registration.Content.ViewModel(products: response.products)
-        viewController?.displayContent(viewModel: viewModel)
+    func presentRegisterResult(response: Registration.Register.Response) {
+        viewController?.displayRegisterResult(viewModel: .init(isRegisterSuccessfull: response.isRegisterSuccessfull))
     }
 }

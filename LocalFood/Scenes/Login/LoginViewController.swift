@@ -1,27 +1,25 @@
 //
-//  RegistrationViewController.swift
+//  LoginViewController.swift
 //  LocalFood
 //
-//  Created by Eryk Chrustek on 10/03/2022.
+//  Created by Eryk Chrustek on 12/03/2022.
 //
 
 import UIKit
 
-final class RegistrationViewController: UIViewController, RegistrationRoutingLogicDelegate {
+final class LoginViewController: UIViewController, LoginRoutingLogicDelegate {
 
     // MARK: Properties
-    var interactor: RegistrationBusinessLogic?
-    var router: RegistrationRouting?
+    var interactor: LoginBusinessLogic?
+    var router: LoginRouting?
 
     // MARK: Subviews
     private var titleLabel = UILabel()
     private var contentView = UIView()
     private var stackView = UIStackView()
-    private var nameTextField = UITextField()
-    private var surnameTextField = UITextField()
     private var emailTextField = UITextField()
     private var passwordTextField = UITextField()
-    private var registerButton = UIButton()
+    private var loginButton = UIButton()
     private var notification = Notification()
 
     // MARK: View lifecycle
@@ -32,14 +30,14 @@ final class RegistrationViewController: UIViewController, RegistrationRoutingLog
 }
 
 // MARK: Private
-private extension RegistrationViewController {
+private extension LoginViewController {
     func setup() {
         view.backgroundColor = UIColor(named: "white")
         setupTitleLabel()
         setupContentView()
         setupStackView()
         setupFields()
-        setupRegisterButton()
+        setupLoginButton()
         setupNavigationBar()
         setupHiddenKeyboard()
         setupNotification()
@@ -63,7 +61,7 @@ private extension RegistrationViewController {
 
     func setupTitleLabel() {
         view.addSubview(titleLabel)
-        titleLabel.text = "Rejestracja"
+        titleLabel.text = "Logowanie"
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.font = UIFont.systemFont(ofSize: 25.0, weight: .bold)
         titleLabel.textColor = UIColor(named: "black")
@@ -102,12 +100,10 @@ private extension RegistrationViewController {
     }
     
     func setupFields() {
-        [nameTextField, surnameTextField, emailTextField, passwordTextField].forEach {
+        [emailTextField, passwordTextField].forEach {
             setupField($0)
         }
-        
-        nameTextField.placeholder = "Imię"
-        surnameTextField.placeholder = "Nazwisko"
+    
         emailTextField.placeholder = "Email"
         passwordTextField.placeholder = "Hasło"
         passwordTextField.isSecureTextEntry = true
@@ -123,63 +119,49 @@ private extension RegistrationViewController {
         ])
     }
 
-    func setupRegisterButton() {
-        contentView.addSubview(registerButton)
-        registerButton.setupPrimaryView(with: "Zarejestruj")
-        registerButton.translatesAutoresizingMaskIntoConstraints = false
-        registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
+    func setupLoginButton() {
+        contentView.addSubview(loginButton)
+        loginButton.setupPrimaryView(with: "Zaloguj")
+        loginButton.translatesAutoresizingMaskIntoConstraints = false
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
 
         NSLayoutConstraint.activate([
-            registerButton.heightAnchor.constraint(equalToConstant: 50),
-            registerButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            registerButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            registerButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -48)
+            loginButton.heightAnchor.constraint(equalToConstant: 50),
+            loginButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            loginButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            loginButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -48)
         ])
     }
     
-    func setupDisableRegisterButton() {
-        if fieldsIsNotEmpty() {
-            registerButton.setupDisablePrimaryView()
-            registerButton.setTitle("Zarejestruj", for: .normal)
-            registerButton.isEnabled = false
-        } else {
-            registerButton.setupPrimaryView(with: "Zarejestruj")
-            registerButton.isEnabled = true
-        }
-    }
-    
     func fieldsIsNotEmpty() -> Bool {
-        return ![nameTextField, surnameTextField, emailTextField, passwordTextField].contains(where: { $0.text == "" })
+        return ![emailTextField, passwordTextField].contains(where: { $0.text == "" })
     }
 }
 
 // MARK: Actions
-private extension RegistrationViewController {
-    @objc func registerButtonTapped() {
-        [nameTextField, surnameTextField, emailTextField, passwordTextField].forEach {
+private extension LoginViewController {
+    @objc func loginButtonTapped() {
+        [emailTextField, passwordTextField].forEach {
             $0.text = "q"
         }
         
         if fieldsIsNotEmpty() {
-            let data = Account(
-                name: nameTextField.text ?? "",
-                surname: surnameTextField.text ?? "",
+            interactor?.login(request: .init(
                 email: emailTextField.text ?? "",
-                password: passwordTextField.text ?? "")
-            interactor?.register(request: .init(data: data))
+                password: passwordTextField.text ?? ""))
         } else {
             notification.display(text: "Uzupełnij wszystkie pola", .red)
         }
     }
 }
 
-// MARK: RegistrationDisplayLogic
-extension RegistrationViewController: RegistrationDisplayLogic {
-    func displayRegisterResult(viewModel: Registration.Register.ViewModel) {
-        if viewModel.isRegisterSuccessfull {
-            navigationController?.popToRootViewController(animated: true)
+// MARK: LoginDisplayLogic
+extension LoginViewController: LoginDisplayLogic {
+    func displayLoginResult(viewModel: Login.Login.ViewModel) {
+        if viewModel.isLoginSuccessfull {
+            router?.routeToMap()
         } else {
-            notification.display(text: "Konto już istnieje", .red)
+            notification.display(text: "Błędny login lub hasło", .red)
         }
     }
 }

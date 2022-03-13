@@ -9,7 +9,6 @@ import UIKit
 
 struct ReceiptCreator {
     func getViewController() -> UIViewController {
-        let gateway = GatewayInstance()
         let interactor = ReceiptInteractor()
         let presenter = ReceiptPresenter()
         let router = ReceiptRouter()
@@ -19,7 +18,6 @@ struct ReceiptCreator {
         viewController.interactor = interactor
         viewController.router = router
         interactor.presenter = presenter
-        interactor.gateway = gateway
         presenter.viewController = viewController
         presenter.attach(viewController: viewController)
 

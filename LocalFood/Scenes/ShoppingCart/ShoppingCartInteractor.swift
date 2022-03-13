@@ -11,7 +11,6 @@ final class ShoppingCartInteractor: ShoppingCartDataStore {
 
     // MARK: Properties
     var presenter: ShoppingCartPresenting?
-    var gateway: APIGateway?
     var ShoppingCartId: String?
 }
 

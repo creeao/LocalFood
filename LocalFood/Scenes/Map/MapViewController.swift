@@ -33,8 +33,6 @@ class MapViewController: UIViewController, MapRoutingLogicDelegate {
         super.viewDidLoad()
         setup()
         prepareContent()
-        setupLocationManager()
-        NotificationCenter.default.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -110,6 +108,10 @@ private extension MapViewController {
         setupPopupElements()
         setupHidePopup()
         setupDeliveryStatusView()
+        
+        setupLocationManager()
+        setupBackButton()
+        setupAppMovedToBackground()
     }
     
     func setupLocationManager() {
@@ -211,6 +213,10 @@ private extension MapViewController {
             deliveryStatus.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
             deliveryStatus.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+    
+    func setupAppMovedToBackground() {
+        NotificationCenter.default.addObserver(self, selector: #selector(appMovedToBackground), name: UIApplication.willResignActiveNotification, object: nil)
     }
     
     func setupHidePopup() {

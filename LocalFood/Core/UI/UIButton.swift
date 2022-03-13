@@ -14,7 +14,7 @@ extension UIButton {
         setTitleColor(UIColor(named: "lightGray"), for: .highlighted)
         backgroundColor = UIColor(named: "primary")
         titleLabel?.font = UIFont.systemFont(ofSize: 16.0, weight: .semibold)
-        layer.cornerRadius = 12
+        layer.cornerRadius = Constants.cornerRadius
         layer.shadowColor = UIColor(named: "primary")?.cgColor
         layer.shadowOpacity = 0.4
         layer.shadowOffset = .zero
@@ -25,7 +25,7 @@ extension UIButton {
         setTitleColor(UIColor(named: "white"), for: .normal)
         backgroundColor = UIColor(named: "darkGray")
         titleLabel?.font = UIFont.systemFont(ofSize: 16.0, weight: .semibold)
-        layer.cornerRadius = 12
+        layer.cornerRadius = Constants.cornerRadius
         layer.shadowColor = UIColor(named: "darkGray")?.cgColor
         layer.shadowOpacity = 0.4
         layer.shadowOffset = .zero

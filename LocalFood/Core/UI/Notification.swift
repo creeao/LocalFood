@@ -7,9 +7,9 @@
 
 import UIKit
 
-enum NotificationType {
-    case added
-    case deleted
+enum NotificationColor {
+    case green
+    case red
 }
 
 final class Notification: UIView {
@@ -24,11 +24,12 @@ final class Notification: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func display(_ type: NotificationType) {
-        if type == .added {
-            setupAddProduct()
+    func display(text: String, _ color: NotificationColor) {
+        label.text = text
+        if color == .green {
+            setupGreen()
         } else {
-            setupDeleteProduct()
+            setupRed()
         }
         
         UIView.animate(withDuration: 0.3) {
@@ -62,14 +63,12 @@ final class Notification: UIView {
         ])
     }
     
-    private func setupAddProduct() {
-        label.text = "Dodano do koszyka"
+    private func setupGreen() {
         backgroundColor = UIColor(named: "success")
         layer.shadowColor = UIColor(named: "success")?.cgColor
     }
     
-    private func setupDeleteProduct() {
-        label.text = "Usunięto z koszyka"
+    private func setupRed() {
         backgroundColor = UIColor(named: "failure")
         layer.shadowColor = UIColor(named: "failure")?.cgColor
     }

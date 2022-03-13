@@ -14,7 +14,6 @@ final class MapInteractor: MapDataStore {
 
     // MARK: Properties
     var presenter: MapPresenting?
-    var gateway: APIGateway?
 }
 
 // MARK: MapBusinessLogic

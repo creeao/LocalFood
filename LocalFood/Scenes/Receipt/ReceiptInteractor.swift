@@ -11,7 +11,6 @@ final class ReceiptInteractor: ReceiptDataStore {
 
     // MARK: Properties
     var presenter: ReceiptPresenting?
-    var gateway: APIGateway?
     var ReceiptId: String?
 }
 

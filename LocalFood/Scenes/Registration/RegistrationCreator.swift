@@ -9,7 +9,6 @@ import UIKit
 
 struct RegistrationCreator {
     func getViewController() -> UIViewController {
-        let gateway = GatewayInstance()
         let interactor = RegistrationInteractor()
         let presenter = RegistrationPresenter()
         let router = RegistrationRouter()
@@ -19,7 +18,6 @@ struct RegistrationCreator {
         viewController.interactor = interactor
         viewController.router = router
         interactor.presenter = presenter
-        interactor.gateway = gateway
         presenter.viewController = viewController
         presenter.attach(viewController: viewController)
 

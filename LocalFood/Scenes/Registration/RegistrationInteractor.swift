@@ -8,24 +8,18 @@
 import Foundation
 
 final class RegistrationInteractor: RegistrationDataStore {
-
     // MARK: Properties
     var presenter: RegistrationPresenting?
-    var gateway: APIGateway?
-    var RegistrationId: String?
 }
 
 // MARK: RegistrationBusinessLogic
 extension RegistrationInteractor: RegistrationBusinessLogic {
-    func prepareContent(request: Registration.Content.Request) {
-        let products = Basket.shared.getProducts()
-        let response = Registration.Content.Response(products: products)
-        presenter?.presentContent(response: response)
-    }
-    
-    func makeOrder(request: Registration.MakeOrder.Request) {
-        guard let selectedPlace = Orders.shared.selectedPlace else { return }
-        let products = Basket.shared.getProducts()
-        Orders.shared.makeOrder(products: products, place: selectedPlace)
+    func register(request: Registration.Register.Request) {
+        if Accounts.shared.accountExist(email: request.data.email) {
+            presenter?.presentRegisterResult(response: .init(isRegisterSuccessfull: false))
+        } else {
+            Accounts.shared.addAccount(request.data)
+            presenter?.presentRegisterResult(response: .init(isRegisterSuccessfull: true))
+        }
     }
 }

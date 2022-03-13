@@ -9,7 +9,6 @@ import UIKit
 
 struct PlaceCreator {
     func getViewController() -> UIViewController {
-        let gateway = GatewayInstance()
         let interactor = PlaceInteractor()
         let presenter = PlacePresenter()
         let router = PlaceRouter()
@@ -19,7 +18,6 @@ struct PlaceCreator {
         viewController.interactor = interactor
         viewController.router = router
         interactor.presenter = presenter
-        interactor.gateway = gateway
         presenter.viewController = viewController
         presenter.attach(viewController: viewController)
 

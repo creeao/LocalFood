@@ -11,7 +11,6 @@ final class PlaceInteractor: PlaceDataStore {
 
     // MARK: Properties
     var presenter: PlacePresenting?
-    var gateway: APIGateway?
     var placeId: String?
 }
 

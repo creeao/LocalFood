@@ -9,7 +9,6 @@ import UIKit
 
 struct ShoppingCartCreator {
     func getViewController() -> UIViewController {
-        let gateway = GatewayInstance()
         let interactor = ShoppingCartInteractor()
         let presenter = ShoppingCartPresenter()
         let router = ShoppingCartRouter()
@@ -19,7 +18,6 @@ struct ShoppingCartCreator {
         viewController.interactor = interactor
         viewController.router = router
         interactor.presenter = presenter
-        interactor.gateway = gateway
         presenter.viewController = viewController
         presenter.attach(viewController: viewController)
 

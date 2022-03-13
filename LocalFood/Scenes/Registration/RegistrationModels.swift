@@ -8,23 +8,17 @@
 import Foundation
 
 enum Registration {
-    enum Content {
+    enum Register {
         struct Request {
-
+            let data: Account
         }
-
+        
         struct Response {
-            let products: [Product]
+            let isRegisterSuccessfull: Bool
         }
-
+        
         struct ViewModel {
-            let products: [Product]
-        }
-    }
-    
-    enum MakeOrder {
-        struct Request {
-
+            let isRegisterSuccessfull: Bool
         }
     }
 }

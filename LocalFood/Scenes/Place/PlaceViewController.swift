@@ -113,7 +113,7 @@ private extension PlaceViewController {
     
     private func setupNavigationBar() {
         setupBackButton()
-        let shoppingCartIcon = UIImage(systemName: "wallet.pass.fill")
+        let shoppingCartIcon = UIImage(systemName: "cart.fill")
         let shoppingCartItem = UIBarButtonItem(image: shoppingCartIcon, style: .done, target: self, action: #selector(routeToShoppingCart))
         
         navigationItem.rightBarButtonItem = shoppingCartItem
@@ -147,7 +147,7 @@ extension PlaceViewController: PlaceDisplayLogic {
 // MARK: SelectedProductPopupDelegate
 extension PlaceViewController: SelectedProductPopupDelegate {
     func addProduct() {
-        notification.display(.added)
+        notification.display(text: "Dodano do koszyka", .green)
     }
 }
 
