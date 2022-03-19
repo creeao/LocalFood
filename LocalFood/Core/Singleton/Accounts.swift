@@ -43,4 +43,16 @@ class Accounts {
     func getLoginAccount() -> Account? {
         return loginAccount
     }
+    
+    func editData(_ newData: Account) -> Bool {
+        if let _ = accounts.first(where: { $0.email == loginAccount?.email && $0.password == loginAccount?.password }) {
+            accounts.removeAll { $0.email == loginAccount?.email && $0.password == loginAccount?.password
+            }
+            addAccount(newData)
+            loginAccount = newData
+            return true
+        } else {
+            return false
+        }
+    }
 }

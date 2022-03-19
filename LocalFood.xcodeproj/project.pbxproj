@@ -46,6 +46,23 @@
 		2E9E5EE227E26D0C004CB074 /* MenuModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E5EE127E26D0C004CB074 /* MenuModels.swift */; };
 		2E9E5EE527E5FDA9004CB074 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E5EE427E5FDA9004CB074 /* MenuCell.swift */; };
 		2E9E5EE727E5FED3004CB074 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E5EE627E5FED3004CB074 /* MenuItem.swift */; };
+		2E9E5EEA27E60325004CB074 /* ReceiptsCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E5EE927E60325004CB074 /* ReceiptsCreator.swift */; };
+		2E9E5EEC27E60332004CB074 /* ReceiptsContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E5EEB27E60332004CB074 /* ReceiptsContracts.swift */; };
+		2E9E5EEE27E60360004CB074 /* ReceiptsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E5EED27E60360004CB074 /* ReceiptsInteractor.swift */; };
+		2E9E5EF027E60369004CB074 /* ReceiptsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E5EEF27E60369004CB074 /* ReceiptsPresenter.swift */; };
+		2E9E5EF227E60373004CB074 /* ReceiptsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E5EF127E60373004CB074 /* ReceiptsViewController.swift */; };
+		2E9E5EF427E6037C004CB074 /* ReceiptsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E5EF327E6037C004CB074 /* ReceiptsRouter.swift */; };
+		2E9E5EF627E60383004CB074 /* ReceiptsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E5EF527E60383004CB074 /* ReceiptsModels.swift */; };
+		2E9E5EF827E604A5004CB074 /* ReceiptItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E5EF727E604A5004CB074 /* ReceiptItem.swift */; };
+		2E9E5EFA27E60850004CB074 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E5EF927E6084F004CB074 /* Date.swift */; };
+		2E9E5EFD27E608FE004CB074 /* ReceiptCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E5EFC27E608FE004CB074 /* ReceiptCell.swift */; };
+		2E9E5F0027E610C2004CB074 /* EditProfileCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E5EFF27E610C2004CB074 /* EditProfileCreator.swift */; };
+		2E9E5F0227E610D3004CB074 /* EditProfileContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E5F0127E610D3004CB074 /* EditProfileContracts.swift */; };
+		2E9E5F0427E610DB004CB074 /* EditProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E5F0327E610DB004CB074 /* EditProfileInteractor.swift */; };
+		2E9E5F0627E610E0004CB074 /* EditProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E5F0527E610E0004CB074 /* EditProfilePresenter.swift */; };
+		2E9E5F0827E610EB004CB074 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E5F0727E610EB004CB074 /* EditProfileViewController.swift */; };
+		2E9E5F0A27E610F0004CB074 /* EditProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E5F0927E610F0004CB074 /* EditProfileRouter.swift */; };
+		2E9E5F0C27E610FA004CB074 /* EditProfileModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E5F0B27E610FA004CB074 /* EditProfileModels.swift */; };
 		2E9F3E2127DCFCB300F5BA23 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9F3E2027DCFCB300F5BA23 /* UITextField.swift */; };
 		2E9F3E2327DCFD0000F5BA23 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9F3E2227DCFD0000F5BA23 /* Constants.swift */; };
 		2E9F3E2527DD01C100F5BA23 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9F3E2427DD01C100F5BA23 /* UIViewController.swift */; };
@@ -140,6 +157,23 @@
 		2E9E5EE127E26D0C004CB074 /* MenuModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModels.swift; sourceTree = "<group>"; };
 		2E9E5EE427E5FDA9004CB074 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		2E9E5EE627E5FED3004CB074 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		2E9E5EE927E60325004CB074 /* ReceiptsCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptsCreator.swift; sourceTree = "<group>"; };
+		2E9E5EEB27E60332004CB074 /* ReceiptsContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptsContracts.swift; sourceTree = "<group>"; };
+		2E9E5EED27E60360004CB074 /* ReceiptsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptsInteractor.swift; sourceTree = "<group>"; };
+		2E9E5EEF27E60369004CB074 /* ReceiptsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptsPresenter.swift; sourceTree = "<group>"; };
+		2E9E5EF127E60373004CB074 /* ReceiptsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptsViewController.swift; sourceTree = "<group>"; };
+		2E9E5EF327E6037C004CB074 /* ReceiptsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptsRouter.swift; sourceTree = "<group>"; };
+		2E9E5EF527E60383004CB074 /* ReceiptsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptsModels.swift; sourceTree = "<group>"; };
+		2E9E5EF727E604A5004CB074 /* ReceiptItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptItem.swift; sourceTree = "<group>"; };
+		2E9E5EF927E6084F004CB074 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		2E9E5EFC27E608FE004CB074 /* ReceiptCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptCell.swift; sourceTree = "<group>"; };
+		2E9E5EFF27E610C2004CB074 /* EditProfileCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileCreator.swift; sourceTree = "<group>"; };
+		2E9E5F0127E610D3004CB074 /* EditProfileContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileContracts.swift; sourceTree = "<group>"; };
+		2E9E5F0327E610DB004CB074 /* EditProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileInteractor.swift; sourceTree = "<group>"; };
+		2E9E5F0527E610E0004CB074 /* EditProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfilePresenter.swift; sourceTree = "<group>"; };
+		2E9E5F0727E610EB004CB074 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		2E9E5F0927E610F0004CB074 /* EditProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileRouter.swift; sourceTree = "<group>"; };
+		2E9E5F0B27E610FA004CB074 /* EditProfileModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileModels.swift; sourceTree = "<group>"; };
 		2E9F3E2027DCFCB300F5BA23 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		2E9F3E2227DCFD0000F5BA23 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2E9F3E2427DD01C100F5BA23 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -236,6 +270,7 @@
 				2E9F3E2227DCFD0000F5BA23 /* Constants.swift */,
 				2E1F82E827C29D4E00413348 /* NavigationBar.swift */,
 				2E9F3E2427DD01C100F5BA23 /* UIViewController.swift */,
+				2E9E5EF927E6084F004CB074 /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -292,6 +327,7 @@
 				2E84B2672766216000697B3C /* SelectedPlace.swift */,
 				2E9E5ECC27DE34D4004CB074 /* ProductType.swift */,
 				2E9E5EE627E5FED3004CB074 /* MenuItem.swift */,
+				2E9E5EF727E604A5004CB074 /* ReceiptItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -335,11 +371,41 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		2E9E5EE827E60250004CB074 /* Orders */ = {
+		2E9E5EE827E60250004CB074 /* Receipts */ = {
 			isa = PBXGroup;
 			children = (
+				2E9E5EFB27E608EA004CB074 /* Components */,
+				2E9E5EE927E60325004CB074 /* ReceiptsCreator.swift */,
+				2E9E5EEB27E60332004CB074 /* ReceiptsContracts.swift */,
+				2E9E5EED27E60360004CB074 /* ReceiptsInteractor.swift */,
+				2E9E5EEF27E60369004CB074 /* ReceiptsPresenter.swift */,
+				2E9E5EF127E60373004CB074 /* ReceiptsViewController.swift */,
+				2E9E5EF327E6037C004CB074 /* ReceiptsRouter.swift */,
+				2E9E5EF527E60383004CB074 /* ReceiptsModels.swift */,
 			);
-			path = Orders;
+			path = Receipts;
+			sourceTree = "<group>";
+		};
+		2E9E5EFB27E608EA004CB074 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2E9E5EFC27E608FE004CB074 /* ReceiptCell.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		2E9E5EFE27E610B3004CB074 /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				2E9E5EFF27E610C2004CB074 /* EditProfileCreator.swift */,
+				2E9E5F0127E610D3004CB074 /* EditProfileContracts.swift */,
+				2E9E5F0327E610DB004CB074 /* EditProfileInteractor.swift */,
+				2E9E5F0527E610E0004CB074 /* EditProfilePresenter.swift */,
+				2E9E5F0727E610EB004CB074 /* EditProfileViewController.swift */,
+				2E9E5F0927E610F0004CB074 /* EditProfileRouter.swift */,
+				2E9E5F0B27E610FA004CB074 /* EditProfileModels.swift */,
+			);
+			path = EditProfile;
 			sourceTree = "<group>";
 		};
 		2E9F3E2827DD1AE200F5BA23 /* Login */ = {
@@ -470,7 +536,8 @@
 		5B961B5D274A96EF0057A939 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				2E9E5EE827E60250004CB074 /* Orders */,
+				2E9E5EFE27E610B3004CB074 /* EditProfile */,
+				2E9E5EE827E60250004CB074 /* Receipts */,
 				2E9E5ED427E26CCA004CB074 /* Menu */,
 				2E9F3E3727DD216900F5BA23 /* Main */,
 				2E9F3E2827DD1AE200F5BA23 /* Login */,
@@ -568,6 +635,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E9E5F0827E610EB004CB074 /* EditProfileViewController.swift in Sources */,
 				2E9F3E2E27DD1B2D00F5BA23 /* LoginInteractor.swift in Sources */,
 				2E84B27F27662FC600697B3C /* ShoppingCartPresenter.swift in Sources */,
 				2E12E05227CFF6D500D30B5A /* Basket.swift in Sources */,
@@ -585,7 +653,9 @@
 				2E9E5EC727DE25C6004CB074 /* Order.swift in Sources */,
 				2E1F82E927C29D4E00413348 /* NavigationBar.swift in Sources */,
 				5B961B66274A97400057A939 /* MapRouter.swift in Sources */,
+				2E9E5EEA27E60325004CB074 /* ReceiptsCreator.swift in Sources */,
 				5B0798102752911B00988DED /* MapPlace.swift in Sources */,
+				2E9E5EEC27E60332004CB074 /* ReceiptsContracts.swift in Sources */,
 				2E9E5ED227DE6C38004CB074 /* ReceiptProductCell.swift in Sources */,
 				2E9F3E2C27DD1B2300F5BA23 /* LoginContracts.swift in Sources */,
 				2E9F3E2527DD01C100F5BA23 /* UIViewController.swift in Sources */,
@@ -595,14 +665,19 @@
 				2E9E5EE227E26D0C004CB074 /* MenuModels.swift in Sources */,
 				2E84B27D27662FBB00697B3C /* ShoppingCartInteractor.swift in Sources */,
 				2E1F82E627C286E000413348 /* UIButton.swift in Sources */,
+				2E9E5EF227E60373004CB074 /* ReceiptsViewController.swift in Sources */,
 				2E9E5ECD27DE34D4004CB074 /* ProductType.swift in Sources */,
 				2E84B28327662FD500697B3C /* ShoppingCartRouter.swift in Sources */,
 				2EB9F93227D3B24500571648 /* Orders.swift in Sources */,
 				2E9F3E4527DD21D000F5BA23 /* MainModels.swift in Sources */,
 				2E9F3E2727DD042B00F5BA23 /* Accounts.swift in Sources */,
 				5B07981327529D0C00988DED /* LocationCoordinates.swift in Sources */,
+				2E9E5EEE27E60360004CB074 /* ReceiptsInteractor.swift in Sources */,
+				2E9E5EFA27E60850004CB074 /* Date.swift in Sources */,
 				2E9F3E3F27DD21B900F5BA23 /* MainPresenter.swift in Sources */,
 				2EB9F93027D39EFE00571648 /* Notification.swift in Sources */,
+				2E9E5F0427E610DB004CB074 /* EditProfileInteractor.swift in Sources */,
+				2E9E5EF027E60369004CB074 /* ReceiptsPresenter.swift in Sources */,
 				5B0797FE27528C6700988DED /* MapModels.swift in Sources */,
 				2E9F3E3227DD1B4500F5BA23 /* LoginViewController.swift in Sources */,
 				2E9F3E3927DD219D00F5BA23 /* MainCreator.swift in Sources */,
@@ -611,7 +686,9 @@
 				2E9E5ECB27DE25F9004CB074 /* Account.swift in Sources */,
 				2E84B28E276632AD00697B3C /* ReceiptPresenter.swift in Sources */,
 				5B961B67274A97400057A939 /* MapCreator.swift in Sources */,
+				2E9E5F0627E610E0004CB074 /* EditProfilePresenter.swift in Sources */,
 				2EAF4B1427DA916C0071335B /* RegistrationContracts.swift in Sources */,
+				2E9E5EF827E604A5004CB074 /* ReceiptItem.swift in Sources */,
 				2E9F3E3627DD1B5C00F5BA23 /* LoginModels.swift in Sources */,
 				5B1F03E52753BD12001A8AC9 /* PlaceModels.swift in Sources */,
 				2EAF4B1E27DA91930071335B /* RegistrationModels.swift in Sources */,
@@ -627,6 +704,7 @@
 				5B1F03E32753BD06001A8AC9 /* PlaceRouter.swift in Sources */,
 				2E9F3E3427DD1B4E00F5BA23 /* LoginRouter.swift in Sources */,
 				5B1F03DF2753BCF7001A8AC9 /* PlacePresenter.swift in Sources */,
+				2E9E5EF627E60383004CB074 /* ReceiptsModels.swift in Sources */,
 				2E84B26E276621CC00697B3C /* Product.swift in Sources */,
 				2EB9F93427D3C3F200571648 /* DeliveryStatus.swift in Sources */,
 				2E84B28A2766329C00697B3C /* ReceiptContracts.swift in Sources */,
@@ -638,24 +716,30 @@
 				2E9F3E3027DD1B3900F5BA23 /* LoginPresenter.swift in Sources */,
 				2E9F3E4127DD21C100F5BA23 /* MainViewController.swift in Sources */,
 				2EE3A4DB27CBE476006F22FD /* BarStyle.swift in Sources */,
+				2E9E5F0C27E610FA004CB074 /* EditProfileModels.swift in Sources */,
 				2E84B28527662FDF00697B3C /* ShoppingCartModels.swift in Sources */,
 				2E9E5EC927DE25D9004CB074 /* OrderStatus.swift in Sources */,
 				2E1F82EB27C29EB200413348 /* Border.swift in Sources */,
+				2E9E5F0A27E610F0004CB074 /* EditProfileRouter.swift in Sources */,
 				2E9F3E2127DCFCB300F5BA23 /* UITextField.swift in Sources */,
 				2E1F82E427C281A000413348 /* Gradient.swift in Sources */,
 				2EC7FDA6278B3DF50079BA7A /* SelectedProductPopup.swift in Sources */,
 				2EAF4B1827DA917C0071335B /* RegistrationPresenter.swift in Sources */,
 				2E84B28C276632A600697B3C /* ReceiptInteractor.swift in Sources */,
+				2E9E5EFD27E608FE004CB074 /* ReceiptCell.swift in Sources */,
 				5B1F03DD2753BCEF001A8AC9 /* PlaceInteractor.swift in Sources */,
+				2E9E5EF427E6037C004CB074 /* ReceiptsRouter.swift in Sources */,
 				2E9F3E2327DCFD0000F5BA23 /* Constants.swift in Sources */,
 				2E9E5EE027E26D06004CB074 /* MenuRouter.swift in Sources */,
 				2EAF4B1227DA91610071335B /* RegistrationCreator.swift in Sources */,
 				2E84B294276632C600697B3C /* ReceiptModels.swift in Sources */,
 				5B1F03DB2753BCE5001A8AC9 /* PlaceContracts.swift in Sources */,
 				2EAF4B1C27DA918C0071335B /* RegistrationViewController.swift in Sources */,
+				2E9E5F0227E610D3004CB074 /* EditProfileContracts.swift in Sources */,
 				2E84B272276623FB00697B3C /* PlaceCategory.swift in Sources */,
 				2E1F82EE27C2A26000413348 /* ShopingCartProductCell.swift in Sources */,
 				2E84B2882766329400697B3C /* ReceiptCreator.swift in Sources */,
+				2E9E5F0027E610C2004CB074 /* EditProfileCreator.swift in Sources */,
 				2E9E5EDC27E26CF7004CB074 /* MenuPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

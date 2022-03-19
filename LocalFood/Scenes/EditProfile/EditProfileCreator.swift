@@ -1,18 +1,18 @@
 //
-//  ReceiptCreator.swift
+//  EditProfileCreator.swift
 //  LocalFood
 //
-//  Created by Eryk Chrustek on 12/12/2021.
+//  Created by Eryk Chrustek on 19/03/2022.
 //
 
 import UIKit
 
-struct ReceiptCreator {
-    func getViewController(id: Date?) -> UIViewController {
-        let interactor = ReceiptInteractor(id: id)
-        let presenter = ReceiptPresenter()
-        let router = ReceiptRouter()
-        let viewController = ReceiptViewController()
+struct EditProfileCreator {
+    func getViewController() -> UIViewController {
+        let interactor = EditProfileInteractor()
+        let presenter = EditProfilePresenter()
+        let router = EditProfileRouter()
+        let viewController = EditProfileViewController()
 
         router.viewController = viewController
         viewController.interactor = interactor

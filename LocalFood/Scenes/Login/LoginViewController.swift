@@ -140,11 +140,7 @@ private extension LoginViewController {
 
 // MARK: Actions
 private extension LoginViewController {
-    @objc func loginButtonTapped() {
-        [emailTextField, passwordTextField].forEach {
-            $0.text = "q"
-        }
-        
+    @objc func loginButtonTapped() {        
         if fieldsIsNotEmpty() {
             interactor?.login(request: .init(
                 email: emailTextField.text ?? "",

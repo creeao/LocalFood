@@ -1,17 +1,17 @@
 //
-//  RegistrationViewController.swift
+//  EditProfileViewController.swift
 //  LocalFood
 //
-//  Created by Eryk Chrustek on 10/03/2022.
+//  Created by Eryk Chrustek on 19/03/2022.
 //
 
 import UIKit
 
-final class RegistrationViewController: UIViewController, RegistrationRoutingLogicDelegate {
+final class EditProfileViewController: UIViewController, EditProfileRoutingLogicDelegate {
 
     // MARK: Properties
-    var interactor: RegistrationBusinessLogic?
-    var router: RegistrationRouting?
+    var interactor: EditProfileBusinessLogic?
+    var router: EditProfileRouting?
 
     // MARK: Subviews
     private var titleLabel = UILabel()
@@ -21,25 +21,26 @@ final class RegistrationViewController: UIViewController, RegistrationRoutingLog
     private var surnameTextField = UITextField()
     private var emailTextField = UITextField()
     private var passwordTextField = UITextField()
-    private var registerButton = UIButton()
+    private var editButton = UIButton()
     private var notification = Notification()
 
     // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        prepareContent()
     }
 }
 
 // MARK: Private
-private extension RegistrationViewController {
+private extension EditProfileViewController {
     func setup() {
         view.backgroundColor = UIColor(named: "white")
         setupTitleLabel()
         setupContentView()
         setupStackView()
         setupFields()
-        setupRegisterButton()
+        setupEditButton()
         setupNavigationBar()
         setupHiddenKeyboard()
         setupNotification()
@@ -63,7 +64,7 @@ private extension RegistrationViewController {
 
     func setupTitleLabel() {
         view.addSubview(titleLabel)
-        titleLabel.text = "Rejestracja"
+        titleLabel.text = "Edytuj profil"
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.font = UIFont.systemFont(ofSize: 25.0, weight: .bold)
         titleLabel.textColor = UIColor(named: "black")
@@ -123,29 +124,18 @@ private extension RegistrationViewController {
         ])
     }
 
-    func setupRegisterButton() {
-        contentView.addSubview(registerButton)
-        registerButton.setupPrimaryView(with: "Zarejestruj")
-        registerButton.translatesAutoresizingMaskIntoConstraints = false
-        registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
+    func setupEditButton() {
+        contentView.addSubview(editButton)
+        editButton.setupPrimaryView(with: "Zaaktualizuj dane")
+        editButton.translatesAutoresizingMaskIntoConstraints = false
+        editButton.addTarget(self, action: #selector(editButtonTapped), for: .touchUpInside)
 
         NSLayoutConstraint.activate([
-            registerButton.heightAnchor.constraint(equalToConstant: 50),
-            registerButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            registerButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            registerButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -48)
+            editButton.heightAnchor.constraint(equalToConstant: 50),
+            editButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            editButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            editButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -48)
         ])
-    }
-    
-    func setupDisableRegisterButton() {
-        if fieldsIsNotEmpty() {
-            registerButton.setupDisablePrimaryView()
-            registerButton.setTitle("Zarejestruj", for: .normal)
-            registerButton.isEnabled = false
-        } else {
-            registerButton.setupPrimaryView(with: "Zarejestruj")
-            registerButton.isEnabled = true
-        }
     }
     
     func fieldsIsNotEmpty() -> Bool {
@@ -154,28 +144,39 @@ private extension RegistrationViewController {
 }
 
 // MARK: Actions
-private extension RegistrationViewController {
-    @objc func registerButtonTapped() {
+private extension EditProfileViewController {
+    func prepareContent() {
+        interactor?.prepareContent(request: .init())
+    }
+    
+    @objc func editButtonTapped() {
         if fieldsIsNotEmpty() {
             let data = Account(
                 name: nameTextField.text ?? "",
                 surname: surnameTextField.text ?? "",
                 email: emailTextField.text ?? "",
                 password: passwordTextField.text ?? "")
-            interactor?.register(request: .init(data: data))
+            interactor?.edit(request: .init(data: data))
         } else {
-            notification.display(text: "Uzupełnij wszystkie pola", .red)
+            notification.display(text: "Pola nie mogą być puste", .red)
         }
     }
 }
 
-// MARK: RegistrationDisplayLogic
-extension RegistrationViewController: RegistrationDisplayLogic {
-    func displayRegisterResult(viewModel: Registration.Register.ViewModel) {
-        if viewModel.isRegisterSuccessfull {
-            navigationController?.popToRootViewController(animated: true)
+// MARK: EditProfileDisplayLogic
+extension EditProfileViewController: EditProfileDisplayLogic {
+    func displayContent(viewModel: EditProfile.Content.ViewModel) {
+        nameTextField.text = viewModel.data.name
+        surnameTextField.text = viewModel.data.surname
+        emailTextField.text = viewModel.data.email
+        passwordTextField.text = viewModel.data.password
+    }
+    
+    func displayEditResult(viewModel: EditProfile.Edit.ViewModel) {
+        if viewModel.isEditSuccessfull {
+            notification.display(text: "Dane zostały zaaktualiowane", .green)
         } else {
-            notification.display(text: "Konto już istnieje", .red)
+            notification.display(text: "Dane nie zostały zaaktualizowane", .red)
         }
     }
 }

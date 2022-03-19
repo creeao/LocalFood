@@ -1,59 +1,54 @@
 //
-//  MenuViewController.swift
+//  ReceiptsViewController.swift
 //  LocalFood
 //
-//  Created by Eryk Chrustek on 16/03/2022.
+//  Created by Eryk Chrustek on 19/03/2022.
 //
 
 import UIKit
 
-final class MenuViewController: UIViewController, MenuRoutingLogicDelegate {
+final class ReceiptsViewController: UIViewController, ReceiptsRoutingLogicDelegate {
 
     // MARK: Properties
-    var interactor: MenuBusinessLogic?
-    var router: MenuRouting?
+    var interactor: ReceiptsBusinessLogic?
+    var router: ReceiptsRouting?
 
     // MARK: Subviews
     private var titleLabel = UILabel()
     private var descriptionLabel = UILabel()
     private var tableView = UITableView()
-    private var items = [MenuItem]()
+    private var items = [ReceiptItem]()
 
     // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        prepareContent()
     }
 }
 
-// MARK: MenuDisplayLogic
-extension MenuViewController: MenuDisplayLogic {
-    func displayContent(viewModel: Menu.Content.ViewModel) {}
+// MARK: ReceiptsDisplayLogic
+extension ReceiptsViewController: ReceiptsDisplayLogic {
+    func displayContent(viewModel: Receipts.Content.ViewModel) {
+        items = viewModel.orders
+        tableView.reloadData()
+    }
 }
 
 // MARK: Actions
-private extension MenuViewController {
-    func openOrders() {
-        router?.routeToOrders()
-    }
-    
-    func editProfile() {
-        router?.routeToEditProfile()
-    }
-    
-    func logout() {
-        router?.routeToLogout()
+private extension ReceiptsViewController {
+    func prepareContent() {
+        interactor?.prepareContent(request: .init())
     }
 }
 
 // MARK: Private
-private extension MenuViewController {
+private extension ReceiptsViewController {
     func setup() {
         view.backgroundColor = UIColor(named: "white")
         setupTitleLabel()
         setupTableView()
         setupBackButton()
-        setupItems()
     }
     
     func setupTitleLabel() {
@@ -61,7 +56,7 @@ private extension MenuViewController {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.font = UIFont.systemFont(ofSize: 25.0, weight: .bold)
         titleLabel.textColor = UIColor(named: "black")
-        titleLabel.text = "Menu"
+        titleLabel.text = "Receipts"
 
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
@@ -76,7 +71,7 @@ private extension MenuViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
-        tableView.register(MenuCell.self, forCellReuseIdentifier: "MenuCell")
+        tableView.register(ReceiptCell.self, forCellReuseIdentifier: "ReceiptCell")
         tableView.backgroundColor = UIColor(named: "lightGray")
 
         NSLayoutConstraint.activate([
@@ -86,40 +81,24 @@ private extension MenuViewController {
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
-    
-    func setupItems() {
-        let orders = MenuItem(id: 1, name: "Twoje zamówienia")
-        let editProfile = MenuItem(id: 2, name: "Edytuj profil")
-        let logout = MenuItem(id: 1, name: "Wyloguj")
-        items = [orders, editProfile, logout]
-        tableView.reloadData()
-    }
 }
 
 // MARK: UITableViewDelegate
-extension MenuViewController: UITableViewDelegate {
+extension ReceiptsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.row {
-        case 0:
-            openOrders()
-        case 1:
-            editProfile()
-        case 2:
-            logout()
-        default:
-            return
-        }
+        guard let selectedCell = tableView.cellForRow(at: indexPath) as? ReceiptCell else { return }
+        router?.routeToOrderInformation(id: selectedCell.getId())
     }
 }
 
 // MARK: UITableViewDataSource
-extension MenuViewController: UITableViewDataSource {
+extension ReceiptsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as? MenuCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReceiptCell", for: indexPath) as? ReceiptCell
         cell?.setup(with: items[indexPath.row])
         return cell ?? UITableViewCell()
     }

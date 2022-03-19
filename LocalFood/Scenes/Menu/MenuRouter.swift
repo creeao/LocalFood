@@ -18,12 +18,13 @@ final class MenuRouter: MenuDataPassing {
 
 extension MenuRouter: MenuRoutingLogic {
     func routeToOrders() {
-        
+        let receiptsViewController = ReceiptsCreator().getViewController()
+        viewController?.navigationController?.pushViewController(receiptsViewController, animated: true)
     }
     
     func routeToEditProfile() {
-//        let registerViewController = RegistrationCreator().getViewController()
-//        viewController?.navigationController?.pushViewController(registerViewController, animated: true)
+        let editProfileViewController = EditProfileCreator().getViewController()
+        viewController?.navigationController?.pushViewController(editProfileViewController, animated: true)
     }
     
     func routeToLogout() {

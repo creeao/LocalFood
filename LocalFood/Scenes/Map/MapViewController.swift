@@ -132,7 +132,7 @@ private extension MapViewController {
         
         navigationItem.setHidesBackButton(true, animated: false)
         navigationItem.rightBarButtonItem = menuItem
-        navigationItem.rightBarButtonItem?.tintColor = UIColor(named: "lightGray")
+        navigationItem.rightBarButtonItem?.tintColor = UIColor(named: "black")
     }
     
     func setupLocationManager() {
@@ -290,8 +290,8 @@ private extension MapViewController {
             if let polyline = response?.routes[0].polyline {
                 let coordinateRegion = MKCoordinateRegion.init(
                     center: polyline.coordinate,
-                    latitudinalMeters: 3000,
-                    longitudinalMeters: 3000)
+                    latitudinalMeters: 4000,
+                    longitudinalMeters: 4000)
                 self.mapView.addOverlay(polyline)
                 self.mapView.setRegion(coordinateRegion, animated: true)
                 self.lastPolyline = polyline

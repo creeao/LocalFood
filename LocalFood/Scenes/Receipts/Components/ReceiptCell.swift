@@ -1,17 +1,16 @@
 //
-//  ShopingCartProductCell.swift
+//  ReceiptCell.swift
 //  LocalFood
 //
-//  Created by Eryk Chrustek on 20/02/2022.
+//  Created by Eryk Chrustek on 19/03/2022.
 //
 
 import UIKit
 
-class ShopingCartProductCell: UITableViewCell {
+class ReceiptCell: UITableViewCell {
     private let titleLabel = UILabel()
     private let descriptionLabel = UILabel()
-    private let button = UIButton()
-    private var product = Product(name: "", price: 0.0, quantity: 0.0, type: .kilograms)
+    private var receipt = ReceiptItem(placeName: "", cost: "", date: "", id: nil)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -22,32 +21,27 @@ class ShopingCartProductCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup(with product: Product) {
-        self.product = product
-        titleLabel.text = product.name
-        descriptionLabel.text = "\(product.price)" + " " + "PLN" + " | " + "\(product.quantity)" + " " + "\(product.type.description)"
+    func setup(with receipt: ReceiptItem) {
+        self.receipt = receipt
+        titleLabel.text = receipt.placeName
+        descriptionLabel.text = receipt.date + " | " + receipt.cost
     }
     
-    func getName() -> String {
-        return product.name
-    }
-    
-    func getProduct() -> Product {
-        return product
+    func getId() -> Date {
+        return receipt.id ?? Date()
     }
 }
 
 // MARK: Private
-private extension ShopingCartProductCell{
+private extension ReceiptCell {
     func setupView() {
-        [titleLabel, descriptionLabel, button].forEach {
+        [titleLabel, descriptionLabel].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             addSubview($0)
         }
         
         setupTitleLabel()
         setupDescriptionLabel()
-        setupButton()
         selectionStyle = .none
         backgroundColor = UIColor(named: "transparent")
     }
@@ -73,16 +67,5 @@ private extension ShopingCartProductCell{
             descriptionLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12)
         ])
     }
-    
-    func setupButton() {
-        button.setupSecondaryView(for: .minus)
-        
-        NSLayoutConstraint.activate([
-            button.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-            button.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: 40),
-            button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
-            button.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
-            button.heightAnchor.constraint(equalToConstant: 26)
-        ])
-    }
 }
+

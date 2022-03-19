@@ -23,7 +23,7 @@ extension MapRouter: MapRoutingLogic {
     }
     
     func routeToReceipt() {
-        let receiptViewController = ReceiptCreator().getViewController()
+        let receiptViewController = ReceiptCreator().getViewController(id: nil)
         viewController?.navigationController?.pushViewController(receiptViewController, animated: true)
     }
     

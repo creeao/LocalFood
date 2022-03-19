@@ -23,6 +23,7 @@ class MenuCell: UITableViewCell {
     func setup(with item: MenuItem) {
         id = item.id
         titleLabel.text = item.name
+        setupColor(name: item.name)
     }
 }
 
@@ -36,12 +37,19 @@ private extension MenuCell{
         backgroundColor = UIColor(named: "transparent")
         
         titleLabel.font = UIFont.systemFont(ofSize: 18.0, weight: .semibold)
-        titleLabel.textColor = UIColor(named: "darkGray")
         
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 18),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
+            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -18)
         ])
+    }
+    
+    func setupColor(name: String) {
+        if name == "Wyloguj" {
+            titleLabel.textColor = UIColor(named: "failure")
+        } else {
+            titleLabel.textColor = UIColor(named: "darkGray")
+        }
     }
 }

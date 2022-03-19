@@ -11,17 +11,28 @@ final class ReceiptInteractor: ReceiptDataStore {
 
     // MARK: Properties
     var presenter: ReceiptPresenting?
-    var ReceiptId: String?
+    var id: Date?
+    
+    init(id: Date?) {
+        self.id = id
+    }
 }
 
 // MARK: ReceiptBusinessLogic
 extension ReceiptInteractor: ReceiptBusinessLogic {
     func prepareContent(request: Receipt.Content.Request) {
-        guard let order = Orders.shared.getOrders().last else { return }
-        let response = Receipt.Content.Response(
-            placeName: order.place.name,
-            products: order.products,
-            orderValue: order.cost + order.deliveryCost)
-        presenter?.presentContent(response: response)
+        if let order = Orders.shared.getOrders().first(where: { $0.deliveryStartTime == id }) {
+            let response = Receipt.Content.Response(
+                placeName: order.place.name,
+                products: order.products,
+                orderValue: order.cost + order.deliveryCost)
+            presenter?.presentContent(response: response)
+        } else if let order = Orders.shared.getOrders().last {
+            let response = Receipt.Content.Response(
+                placeName: order.place.name,
+                products: order.products,
+                orderValue: order.cost + order.deliveryCost)
+            presenter?.presentContent(response: response)
+        }
     }
 }

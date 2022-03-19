@@ -16,7 +16,4 @@ final class ReceiptRouter: ReceiptDataPassing {
     weak var dataStore: ReceiptDataStore?
 }
 
-extension ReceiptRouter: ReceiptRoutingLogic {
-//    func routeToMap() {
-//    }
-}
+extension ReceiptRouter: ReceiptRoutingLogic {}

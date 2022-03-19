@@ -14,8 +14,5 @@ final class MenuInteractor: MenuDataStore {
 
 // MARK: MenuBusinessLogic
 extension MenuInteractor: MenuBusinessLogic {
-    func prepareContent(request: Menu.Content.Request) {
-        guard let account = Accounts.shared.getLoginAccount() else { return }
-        presenter?.presentContent(response: .init(account: account))
-    }
+    func prepareContent(request: Menu.Content.Request) {}
 }

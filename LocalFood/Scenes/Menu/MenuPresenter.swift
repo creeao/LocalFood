@@ -17,9 +17,5 @@ final class MenuPresenter: MenuPresentationSetup {
 
 // MARK: MenuPresentationLogic
 extension MenuPresenter: MenuPresentationLogic {
-    func presentContent(response: Menu.Content.Response) {
-        let name = response.account.name + " " + response.account.surname
-        let email = response.account.email
-        viewController?.displayContent(viewModel: .init(name: name, email: email))
-    }
+    func presentContent(response: Menu.Content.Response) {}
 }
