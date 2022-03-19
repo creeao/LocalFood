@@ -18,7 +18,9 @@ final class ReceiptPresenter: ReceiptPresentationSetup {
 // MARK: ReceiptPresentationLogic
 extension ReceiptPresenter: ReceiptPresentationLogic {
     func presentContent(response: Receipt.Content.Response) {
-        let viewModel = Receipt.Content.ViewModel(products: response.products)
-        viewController?.displayContent(viewModel: viewModel)
+        viewController?.displayContent(viewModel: .init(
+            placeName: response.placeName,
+            products: response.products,
+            orderValue: response.orderValue))
     }
 }

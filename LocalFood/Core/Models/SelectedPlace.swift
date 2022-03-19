@@ -11,5 +11,5 @@ struct SelectedPlace {
     let id: String
     let name: String
     let description: String
-    let categories: [Category]
+    let products: [Product]
 }

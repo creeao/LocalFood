@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol DeliveryStatusDelegate: AnyObject {
+    func showOrderInfornations()
+}
+
 final class DeliveryStatus: UIView {
     private var contentView = UIView()
     private var statusLabel = UILabel()
@@ -14,6 +18,7 @@ final class DeliveryStatus: UIView {
     private var costLabel = UILabel()
     private var timeLabel = UILabel()
     private var orderInfornationsButton = UIButton()
+    weak var delegate: DeliveryStatusDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,6 +37,7 @@ final class DeliveryStatus: UIView {
     }
 }
 
+// MARK: Private
 private extension DeliveryStatus {
     func setupView() {
         backgroundColor = UIColor(named: "white")
@@ -106,6 +112,7 @@ private extension DeliveryStatus {
         addSubview(orderInfornationsButton)
         orderInfornationsButton.translatesAutoresizingMaskIntoConstraints = false
         orderInfornationsButton.setupPrimaryView(with: "Informacje o zamówieniu")
+        orderInfornationsButton.addTarget(self, action: #selector(orderInfornationsButtonTapped), for: .touchUpInside)
 
         NSLayoutConstraint.activate([
             orderInfornationsButton.topAnchor.constraint(equalTo: timeLabel.bottomAnchor, constant: 16),
@@ -114,5 +121,9 @@ private extension DeliveryStatus {
             orderInfornationsButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -36),
             orderInfornationsButton.heightAnchor.constraint(equalToConstant: 50)
         ])
+    }
+    
+    @objc func orderInfornationsButtonTapped() {
+        delegate?.showOrderInfornations()
     }
 }

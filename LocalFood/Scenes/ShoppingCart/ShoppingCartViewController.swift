@@ -115,7 +115,7 @@ private extension ShoppingCartViewController {
 // MARK: Actions
 private extension ShoppingCartViewController {
     @objc func orderButtonTapped() {
-        guard let place = Orders.shared.selectedPlace else { return }
+        guard let place = Orders.shared.getSelectedPlace() else { return }
         Orders.shared.makeOrder(products: products, place: place)
         navigationController?.popViewController(animated: true)
         navigationController?.popViewController(animated: true)

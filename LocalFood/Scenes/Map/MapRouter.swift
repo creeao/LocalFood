@@ -21,4 +21,14 @@ extension MapRouter: MapRoutingLogic {
         let placeViewController = PlaceCreator().getViewController()
         viewController?.navigationController?.pushViewController(placeViewController, animated: true)
     }
+    
+    func routeToReceipt() {
+        let receiptViewController = ReceiptCreator().getViewController()
+        viewController?.navigationController?.pushViewController(receiptViewController, animated: true)
+    }
+    
+    func routeToMenu() {
+        let menuViewController = MenuCreator().getViewController()
+        viewController?.navigationController?.pushViewController(menuViewController, animated: true)
+    }
 }

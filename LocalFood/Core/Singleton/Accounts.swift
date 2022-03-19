@@ -39,11 +39,8 @@ class Accounts {
     func logout() {
         loginAccount = nil
     }
-}
-
-struct Account {
-    let name: String
-    let surname: String
-    let email: String
-    let password: String
+    
+    func getLoginAccount() -> Account? {
+        return loginAccount
+    }
 }

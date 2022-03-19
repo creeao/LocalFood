@@ -5,17 +5,16 @@
 //  Created by Eryk Chrustek on 05/03/2022.
 //
 
-import Foundation
 import MapKit
 
 class Orders {
     static let shared = Orders()
     
     private var userOrders: [Order] = []
-    var selectedPlace: MapPlace?
-    var polyline: MKPolyline?
-    var distance: Double?
-    var time: Double?
+    private var selectedPlace: MapPlace?
+    private var polyline: MKPolyline?
+    private var distance: Double?
+    private var time: Double?
     
     private init() {}
     
@@ -23,13 +22,18 @@ class Orders {
         let current = Date.now + 3600
         let deliveryTime: TimeInterval = distance ?? 0.0
         
+        var cost: Double = 0.0
+        products.forEach { cost += $0.price }
+        
         let order = Order(
             products: products,
             place: place,
             distance: distance ?? 0.0,
             deliveryStartTime: current,
             deliveryEndTime: current + deliveryTime,
-            status: .packed)
+            deliveryCost: (distance ?? 0.0) / 500.0,
+            status: .packed,
+            cost: cost)
         userOrders.append(order)
     }
 
@@ -40,39 +44,40 @@ class Orders {
     func getOrders() -> [Order] {
         userOrders
     }
-
+    
     func checkOrderStatus() -> OrderStatus {
         userOrders.last?.status ?? .none
     }
-}
-
-struct Order {
-    let products: [Product]
-    let place: MapPlace
-    let distance: Double
-    let deliveryStartTime: Date?
-    let deliveryEndTime: Date?
-    var status: OrderStatus
-}
-
-enum OrderStatus {
-    case none
-    case packed
-    case delivery
-    case done
-}
-
-extension OrderStatus {
-    var text: String {
-        switch self {
-        case .packed:
-            return "Zamówienie jest pakowane"
-        case .delivery:
-            return "Zamówienie jest w drodze"
-        case .done:
-            return "Zamówienie zostało dostarczone"
-        default:
-            return ""
-        }
+    
+    func setSelectedPlace(place: MapPlace?) {
+        selectedPlace = place
+    }
+    
+    func getSelectedPlace() -> MapPlace? {
+        selectedPlace
+    }
+    
+    func setPolyline(_ newPolyline: MKPolyline?) {
+        polyline = newPolyline
+    }
+    
+    func getPolyline() -> MKPolyline? {
+        polyline
+    }
+    
+    func setDistance(_ newDistance: Double?) {
+        distance = newDistance
+    }
+    
+    func getDistance() -> Double? {
+        distance
+    }
+    
+    func setTime(_ newTime: Double?) {
+        time = newTime
+    }
+    
+    func getTime() -> Double? {
+        time
     }
 }

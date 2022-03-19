@@ -31,6 +31,21 @@
 		2E84B290276632B700697B3C /* ReceiptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E84B28F276632B700697B3C /* ReceiptViewController.swift */; };
 		2E84B292276632C000697B3C /* ReceiptRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E84B291276632C000697B3C /* ReceiptRouter.swift */; };
 		2E84B294276632C600697B3C /* ReceiptModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E84B293276632C600697B3C /* ReceiptModels.swift */; };
+		2E9E5EC727DE25C6004CB074 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E5EC627DE25C6004CB074 /* Order.swift */; };
+		2E9E5EC927DE25D9004CB074 /* OrderStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E5EC827DE25D9004CB074 /* OrderStatus.swift */; };
+		2E9E5ECB27DE25F9004CB074 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E5ECA27DE25F9004CB074 /* Account.swift */; };
+		2E9E5ECD27DE34D4004CB074 /* ProductType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E5ECC27DE34D4004CB074 /* ProductType.swift */; };
+		2E9E5ED027DE35D6004CB074 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E5ECF27DE35D6004CB074 /* Mock.swift */; };
+		2E9E5ED227DE6C38004CB074 /* ReceiptProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E5ED127DE6C38004CB074 /* ReceiptProductCell.swift */; };
+		2E9E5ED627E26CDE004CB074 /* MenuCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E5ED527E26CDE004CB074 /* MenuCreator.swift */; };
+		2E9E5ED827E26CE9004CB074 /* MenuContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E5ED727E26CE9004CB074 /* MenuContracts.swift */; };
+		2E9E5EDA27E26CF0004CB074 /* MenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E5ED927E26CF0004CB074 /* MenuInteractor.swift */; };
+		2E9E5EDC27E26CF7004CB074 /* MenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E5EDB27E26CF7004CB074 /* MenuPresenter.swift */; };
+		2E9E5EDE27E26CFF004CB074 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E5EDD27E26CFF004CB074 /* MenuViewController.swift */; };
+		2E9E5EE027E26D06004CB074 /* MenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E5EDF27E26D06004CB074 /* MenuRouter.swift */; };
+		2E9E5EE227E26D0C004CB074 /* MenuModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E5EE127E26D0C004CB074 /* MenuModels.swift */; };
+		2E9E5EE527E5FDA9004CB074 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E5EE427E5FDA9004CB074 /* MenuCell.swift */; };
+		2E9E5EE727E5FED3004CB074 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E5EE627E5FED3004CB074 /* MenuItem.swift */; };
 		2E9F3E2127DCFCB300F5BA23 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9F3E2027DCFCB300F5BA23 /* UITextField.swift */; };
 		2E9F3E2327DCFD0000F5BA23 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9F3E2227DCFD0000F5BA23 /* Constants.swift */; };
 		2E9F3E2527DD01C100F5BA23 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9F3E2427DD01C100F5BA23 /* UIViewController.swift */; };
@@ -64,11 +79,6 @@
 		2EE3A4DB27CBE476006F22FD /* BarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE3A4DA27CBE476006F22FD /* BarStyle.swift */; };
 		5B0797FC27528C4C00988DED /* MapContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0797FB27528C4C00988DED /* MapContracts.swift */; };
 		5B0797FE27528C6700988DED /* MapModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0797FD27528C6700988DED /* MapModels.swift */; };
-		5B07980427528EDF00988DED /* GatewayInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B07980327528EDF00988DED /* GatewayInstance.swift */; };
-		5B07980627528EF500988DED /* APIGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B07980527528EF500988DED /* APIGateway.swift */; };
-		5B07980827528F0A00988DED /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B07980727528F0A00988DED /* APIResponse.swift */; };
-		5B07980A27528F1500988DED /* JSONResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B07980927528F1500988DED /* JSONResponse.swift */; };
-		5B07980D27528F7000988DED /* AppStaticConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B07980C27528F7000988DED /* AppStaticConfig.swift */; };
 		5B0798102752911B00988DED /* MapPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B07980F2752911B00988DED /* MapPlace.swift */; };
 		5B07981327529D0C00988DED /* LocationCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B07981227529D0C00988DED /* LocationCoordinates.swift */; };
 		5B0798162752A50F00988DED /* UserLocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0798152752A50F00988DED /* UserLocationAnnotation.swift */; };
@@ -115,6 +125,21 @@
 		2E84B28F276632B700697B3C /* ReceiptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptViewController.swift; sourceTree = "<group>"; };
 		2E84B291276632C000697B3C /* ReceiptRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptRouter.swift; sourceTree = "<group>"; };
 		2E84B293276632C600697B3C /* ReceiptModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptModels.swift; sourceTree = "<group>"; };
+		2E9E5EC627DE25C6004CB074 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		2E9E5EC827DE25D9004CB074 /* OrderStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatus.swift; sourceTree = "<group>"; };
+		2E9E5ECA27DE25F9004CB074 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		2E9E5ECC27DE34D4004CB074 /* ProductType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductType.swift; sourceTree = "<group>"; };
+		2E9E5ECF27DE35D6004CB074 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
+		2E9E5ED127DE6C38004CB074 /* ReceiptProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptProductCell.swift; sourceTree = "<group>"; };
+		2E9E5ED527E26CDE004CB074 /* MenuCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCreator.swift; sourceTree = "<group>"; };
+		2E9E5ED727E26CE9004CB074 /* MenuContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuContracts.swift; sourceTree = "<group>"; };
+		2E9E5ED927E26CF0004CB074 /* MenuInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuInteractor.swift; sourceTree = "<group>"; };
+		2E9E5EDB27E26CF7004CB074 /* MenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPresenter.swift; sourceTree = "<group>"; };
+		2E9E5EDD27E26CFF004CB074 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		2E9E5EDF27E26D06004CB074 /* MenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRouter.swift; sourceTree = "<group>"; };
+		2E9E5EE127E26D0C004CB074 /* MenuModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModels.swift; sourceTree = "<group>"; };
+		2E9E5EE427E5FDA9004CB074 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		2E9E5EE627E5FED3004CB074 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		2E9F3E2027DCFCB300F5BA23 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		2E9F3E2227DCFD0000F5BA23 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2E9F3E2427DD01C100F5BA23 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -148,11 +173,6 @@
 		2EE3A4DA27CBE476006F22FD /* BarStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarStyle.swift; sourceTree = "<group>"; };
 		5B0797FB27528C4C00988DED /* MapContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapContracts.swift; sourceTree = "<group>"; };
 		5B0797FD27528C6700988DED /* MapModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModels.swift; sourceTree = "<group>"; };
-		5B07980327528EDF00988DED /* GatewayInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatewayInstance.swift; sourceTree = "<group>"; };
-		5B07980527528EF500988DED /* APIGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIGateway.swift; sourceTree = "<group>"; };
-		5B07980727528F0A00988DED /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
-		5B07980927528F1500988DED /* JSONResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONResponse.swift; sourceTree = "<group>"; };
-		5B07980C27528F7000988DED /* AppStaticConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStaticConfig.swift; sourceTree = "<group>"; };
 		5B07980F2752911B00988DED /* MapPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPlace.swift; sourceTree = "<group>"; };
 		5B07981227529D0C00988DED /* LocationCoordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCoordinates.swift; sourceTree = "<group>"; };
 		5B0798152752A50F00988DED /* UserLocationAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationAnnotation.swift; sourceTree = "<group>"; };
@@ -190,9 +210,9 @@
 		2E12E05027CFF68E00D30B5A /* Singleton */ = {
 			isa = PBXGroup;
 			children = (
+				2E9F3E2627DD042B00F5BA23 /* Accounts.swift */,
 				2E12E05127CFF6D500D30B5A /* Basket.swift */,
 				2EB9F93127D3B24500571648 /* Orders.swift */,
-				2E9F3E2627DD042B00F5BA23 /* Accounts.swift */,
 			);
 			path = Singleton;
 			sourceTree = "<group>";
@@ -200,11 +220,11 @@
 		2E1F82E227C2819500413348 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				2E1F82E327C281A000413348 /* Gradient.swift */,
-				2E1F82E527C286E000413348 /* UIButton.swift */,
-				2E1F82EA27C29EB200413348 /* Border.swift */,
 				2EE3A4DA27CBE476006F22FD /* BarStyle.swift */,
+				2E1F82EA27C29EB200413348 /* Border.swift */,
+				2E1F82E327C281A000413348 /* Gradient.swift */,
 				2EB9F92F27D39EFE00571648 /* Notification.swift */,
+				2E1F82E527C286E000413348 /* UIButton.swift */,
 				2E9F3E2027DCFCB300F5BA23 /* UITextField.swift */,
 			);
 			path = UI;
@@ -213,8 +233,8 @@
 		2E1F82E727C29D3B00413348 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				2E1F82E827C29D4E00413348 /* NavigationBar.swift */,
 				2E9F3E2227DCFD0000F5BA23 /* Constants.swift */,
+				2E1F82E827C29D4E00413348 /* NavigationBar.swift */,
 				2E9F3E2427DD01C100F5BA23 /* UIViewController.swift */,
 			);
 			path = Extensions;
@@ -246,6 +266,7 @@
 		2E84B2862766327600697B3C /* Receipt */ = {
 			isa = PBXGroup;
 			children = (
+				2E9E5ED327DE6C3F004CB074 /* Components */,
 				2E84B2872766329400697B3C /* ReceiptCreator.swift */,
 				2E84B2892766329C00697B3C /* ReceiptContracts.swift */,
 				2E84B28B276632A600697B3C /* ReceiptInteractor.swift */,
@@ -255,6 +276,70 @@
 				2E84B293276632C600697B3C /* ReceiptModels.swift */,
 			);
 			path = Receipt;
+			sourceTree = "<group>";
+		};
+		2E9E5EC527DE249C004CB074 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2E9E5ECA27DE25F9004CB074 /* Account.swift */,
+				2E84B26B276621A600697B3C /* Category.swift */,
+				5B07981227529D0C00988DED /* LocationCoordinates.swift */,
+				5B07980F2752911B00988DED /* MapPlace.swift */,
+				2E9E5EC627DE25C6004CB074 /* Order.swift */,
+				2E9E5EC827DE25D9004CB074 /* OrderStatus.swift */,
+				2E84B271276623FB00697B3C /* PlaceCategory.swift */,
+				2E84B26D276621CC00697B3C /* Product.swift */,
+				2E84B2672766216000697B3C /* SelectedPlace.swift */,
+				2E9E5ECC27DE34D4004CB074 /* ProductType.swift */,
+				2E9E5EE627E5FED3004CB074 /* MenuItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2E9E5ECE27DE35B5004CB074 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				2E9E5ECF27DE35D6004CB074 /* Mock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		2E9E5ED327DE6C3F004CB074 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2E9E5ED127DE6C38004CB074 /* ReceiptProductCell.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		2E9E5ED427E26CCA004CB074 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				2E9E5EE327E5FD9C004CB074 /* Components */,
+				2E9E5ED527E26CDE004CB074 /* MenuCreator.swift */,
+				2E9E5ED727E26CE9004CB074 /* MenuContracts.swift */,
+				2E9E5ED927E26CF0004CB074 /* MenuInteractor.swift */,
+				2E9E5EDB27E26CF7004CB074 /* MenuPresenter.swift */,
+				2E9E5EDD27E26CFF004CB074 /* MenuViewController.swift */,
+				2E9E5EDF27E26D06004CB074 /* MenuRouter.swift */,
+				2E9E5EE127E26D0C004CB074 /* MenuModels.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		2E9E5EE327E5FD9C004CB074 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2E9E5EE427E5FDA9004CB074 /* MenuCell.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		2E9E5EE827E60250004CB074 /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Orders;
 			sourceTree = "<group>";
 		};
 		2E9F3E2827DD1AE200F5BA23 /* Login */ = {
@@ -308,68 +393,11 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		5B0797FF27528EA300988DED /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				5B07980027528EB200988DED /* Requests */,
-				5B07980127528EBF00988DED /* Gateway */,
-				5B07980227528EC600988DED /* Models */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		5B07980027528EB200988DED /* Requests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Requests;
-			sourceTree = "<group>";
-		};
-		5B07980127528EBF00988DED /* Gateway */ = {
-			isa = PBXGroup;
-			children = (
-				5B07980327528EDF00988DED /* GatewayInstance.swift */,
-				5B07980527528EF500988DED /* APIGateway.swift */,
-				5B07980727528F0A00988DED /* APIResponse.swift */,
-				5B07980927528F1500988DED /* JSONResponse.swift */,
-			);
-			path = Gateway;
-			sourceTree = "<group>";
-		};
-		5B07980227528EC600988DED /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				5B07980E2752911200988DED /* Map */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		5B07980B27528F6400988DED /* AppConfig */ = {
-			isa = PBXGroup;
-			children = (
-				5B07980C27528F7000988DED /* AppStaticConfig.swift */,
-			);
-			path = AppConfig;
-			sourceTree = "<group>";
-		};
-		5B07980E2752911200988DED /* Map */ = {
-			isa = PBXGroup;
-			children = (
-				5B07980F2752911B00988DED /* MapPlace.swift */,
-				2E84B271276623FB00697B3C /* PlaceCategory.swift */,
-				5B07981227529D0C00988DED /* LocationCoordinates.swift */,
-				2E84B2672766216000697B3C /* SelectedPlace.swift */,
-				2E84B26B276621A600697B3C /* Category.swift */,
-				2E84B26D276621CC00697B3C /* Product.swift */,
-			);
-			path = Map;
-			sourceTree = "<group>";
-		};
 		5B0798142752A4FD00988DED /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				5B0798152752A50F00988DED /* UserLocationAnnotation.swift */,
 				2EB9F93327D3C3F200571648 /* DeliveryStatus.swift */,
+				5B0798152752A50F00988DED /* UserLocationAnnotation.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -420,12 +448,12 @@
 		5B961B5B274A96B60057A939 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				2E9E5ECE27DE35B5004CB074 /* Mocks */,
+				2E9E5EC527DE249C004CB074 /* Models */,
 				2E12E05027CFF68E00D30B5A /* Singleton */,
 				2E1F82E727C29D3B00413348 /* Extensions */,
 				2E1F82E227C2819500413348 /* UI */,
 				5B961B5C274A96C60057A939 /* Application */,
-				5B07980B27528F6400988DED /* AppConfig */,
-				5B0797FF27528EA300988DED /* Network */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -442,6 +470,8 @@
 		5B961B5D274A96EF0057A939 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				2E9E5EE827E60250004CB074 /* Orders */,
+				2E9E5ED427E26CCA004CB074 /* Menu */,
 				2E9F3E3727DD216900F5BA23 /* Main */,
 				2E9F3E2827DD1AE200F5BA23 /* Login */,
 				2EAF4B1027DA90B30071335B /* Registration */,
@@ -541,6 +571,7 @@
 				2E9F3E2E27DD1B2D00F5BA23 /* LoginInteractor.swift in Sources */,
 				2E84B27F27662FC600697B3C /* ShoppingCartPresenter.swift in Sources */,
 				2E12E05227CFF6D500D30B5A /* Basket.swift in Sources */,
+				2E9E5EE727E5FED3004CB074 /* MenuItem.swift in Sources */,
 				5B1F03E12753BD00001A8AC9 /* PlaceViewController.swift in Sources */,
 				5B0798162752A50F00988DED /* UserLocationAnnotation.swift in Sources */,
 				2E9F3E4327DD21C800F5BA23 /* MainRouter.swift in Sources */,
@@ -549,19 +580,22 @@
 				2EB1B35F2781D4A100058817 /* ProductCell.swift in Sources */,
 				2E9F3E3D27DD21B000F5BA23 /* MainInteractor.swift in Sources */,
 				5B961B6B274A97400057A939 /* MapViewController.swift in Sources */,
+				2E9E5EDE27E26CFF004CB074 /* MenuViewController.swift in Sources */,
 				5B961B6A274A97400057A939 /* MapPresenter.swift in Sources */,
-				5B07980427528EDF00988DED /* GatewayInstance.swift in Sources */,
+				2E9E5EC727DE25C6004CB074 /* Order.swift in Sources */,
 				2E1F82E927C29D4E00413348 /* NavigationBar.swift in Sources */,
 				5B961B66274A97400057A939 /* MapRouter.swift in Sources */,
 				5B0798102752911B00988DED /* MapPlace.swift in Sources */,
-				5B07980827528F0A00988DED /* APIResponse.swift in Sources */,
+				2E9E5ED227DE6C38004CB074 /* ReceiptProductCell.swift in Sources */,
 				2E9F3E2C27DD1B2300F5BA23 /* LoginContracts.swift in Sources */,
 				2E9F3E2527DD01C100F5BA23 /* UIViewController.swift in Sources */,
 				2E84B26C276621A600697B3C /* Category.swift in Sources */,
 				2EAF4B1A27DA91830071335B /* RegistrationRouter.swift in Sources */,
 				5B0797FC27528C4C00988DED /* MapContracts.swift in Sources */,
+				2E9E5EE227E26D0C004CB074 /* MenuModels.swift in Sources */,
 				2E84B27D27662FBB00697B3C /* ShoppingCartInteractor.swift in Sources */,
 				2E1F82E627C286E000413348 /* UIButton.swift in Sources */,
+				2E9E5ECD27DE34D4004CB074 /* ProductType.swift in Sources */,
 				2E84B28327662FD500697B3C /* ShoppingCartRouter.swift in Sources */,
 				2EB9F93227D3B24500571648 /* Orders.swift in Sources */,
 				2E9F3E4527DD21D000F5BA23 /* MainModels.swift in Sources */,
@@ -573,6 +607,8 @@
 				2E9F3E3227DD1B4500F5BA23 /* LoginViewController.swift in Sources */,
 				2E9F3E3927DD219D00F5BA23 /* MainCreator.swift in Sources */,
 				2E84B290276632B700697B3C /* ReceiptViewController.swift in Sources */,
+				2E9E5EE527E5FDA9004CB074 /* MenuCell.swift in Sources */,
+				2E9E5ECB27DE25F9004CB074 /* Account.swift in Sources */,
 				2E84B28E276632AD00697B3C /* ReceiptPresenter.swift in Sources */,
 				5B961B67274A97400057A939 /* MapCreator.swift in Sources */,
 				2EAF4B1427DA916C0071335B /* RegistrationContracts.swift in Sources */,
@@ -584,6 +620,8 @@
 				2E9F3E2A27DD1B0900F5BA23 /* LoginCreator.swift in Sources */,
 				2E9F3E3B27DD21A500F5BA23 /* MainContracts.swift in Sources */,
 				5B961B48274A96400057A939 /* AppDelegate.swift in Sources */,
+				2E9E5ED827E26CE9004CB074 /* MenuContracts.swift in Sources */,
+				2E9E5EDA27E26CF0004CB074 /* MenuInteractor.swift in Sources */,
 				2E84B28127662FCE00697B3C /* ShoppingCartViewController.swift in Sources */,
 				5B961B4A274A96400057A939 /* SceneDelegate.swift in Sources */,
 				5B1F03E32753BD06001A8AC9 /* PlaceRouter.swift in Sources */,
@@ -593,13 +631,15 @@
 				2EB9F93427D3C3F200571648 /* DeliveryStatus.swift in Sources */,
 				2E84B28A2766329C00697B3C /* ReceiptContracts.swift in Sources */,
 				2E84B27927662FA400697B3C /* ShoppingCartCreator.swift in Sources */,
+				2E9E5ED627E26CDE004CB074 /* MenuCreator.swift in Sources */,
+				2E9E5ED027DE35D6004CB074 /* Mock.swift in Sources */,
 				2EAF4B1627DA91740071335B /* RegistrationInteractor.swift in Sources */,
 				2E84B2682766216000697B3C /* SelectedPlace.swift in Sources */,
 				2E9F3E3027DD1B3900F5BA23 /* LoginPresenter.swift in Sources */,
 				2E9F3E4127DD21C100F5BA23 /* MainViewController.swift in Sources */,
 				2EE3A4DB27CBE476006F22FD /* BarStyle.swift in Sources */,
 				2E84B28527662FDF00697B3C /* ShoppingCartModels.swift in Sources */,
-				5B07980D27528F7000988DED /* AppStaticConfig.swift in Sources */,
+				2E9E5EC927DE25D9004CB074 /* OrderStatus.swift in Sources */,
 				2E1F82EB27C29EB200413348 /* Border.swift in Sources */,
 				2E9F3E2127DCFCB300F5BA23 /* UITextField.swift in Sources */,
 				2E1F82E427C281A000413348 /* Gradient.swift in Sources */,
@@ -608,15 +648,15 @@
 				2E84B28C276632A600697B3C /* ReceiptInteractor.swift in Sources */,
 				5B1F03DD2753BCEF001A8AC9 /* PlaceInteractor.swift in Sources */,
 				2E9F3E2327DCFD0000F5BA23 /* Constants.swift in Sources */,
+				2E9E5EE027E26D06004CB074 /* MenuRouter.swift in Sources */,
 				2EAF4B1227DA91610071335B /* RegistrationCreator.swift in Sources */,
 				2E84B294276632C600697B3C /* ReceiptModels.swift in Sources */,
 				5B1F03DB2753BCE5001A8AC9 /* PlaceContracts.swift in Sources */,
 				2EAF4B1C27DA918C0071335B /* RegistrationViewController.swift in Sources */,
 				2E84B272276623FB00697B3C /* PlaceCategory.swift in Sources */,
 				2E1F82EE27C2A26000413348 /* ShopingCartProductCell.swift in Sources */,
-				5B07980627528EF500988DED /* APIGateway.swift in Sources */,
-				5B07980A27528F1500988DED /* JSONResponse.swift in Sources */,
 				2E84B2882766329400697B3C /* ReceiptCreator.swift in Sources */,
+				2E9E5EDC27E26CF7004CB074 /* MenuPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

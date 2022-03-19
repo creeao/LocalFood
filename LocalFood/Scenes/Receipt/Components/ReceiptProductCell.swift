@@ -1,16 +1,15 @@
 //
-//  ShopingCartProductCell.swift
+//  ReceiptProductCell.swift
 //  LocalFood
 //
-//  Created by Eryk Chrustek on 20/02/2022.
+//  Created by Eryk Chrustek on 13/03/2022.
 //
 
 import UIKit
 
-class ShopingCartProductCell: UITableViewCell {
+class ReceiptProductCell: UITableViewCell {
     private let titleLabel = UILabel()
     private let descriptionLabel = UILabel()
-    private let button = UIButton()
     private var product = Product(name: "", price: 0.0, quantity: 0.0, type: .kilograms)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -38,16 +37,15 @@ class ShopingCartProductCell: UITableViewCell {
 }
 
 // MARK: Private
-extension ShopingCartProductCell{
+private extension ReceiptProductCell {
     func setupView() {
-        [titleLabel, descriptionLabel, button].forEach {
+        [titleLabel, descriptionLabel].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             addSubview($0)
         }
         
         setupTitleLabel()
         setupDescriptionLabel()
-        setupButton()
         selectionStyle = .none
         backgroundColor = UIColor(named: "transparent")
     }
@@ -71,18 +69,6 @@ extension ShopingCartProductCell{
             descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
             descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             descriptionLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12)
-        ])
-    }
-    
-    func setupButton() {
-        button.setupSecondaryView(for: .minus)
-        
-        NSLayoutConstraint.activate([
-            button.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-            button.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: 40),
-            button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
-            button.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
-            button.heightAnchor.constraint(equalToConstant: 26)
         ])
     }
 }

@@ -24,7 +24,7 @@ extension MapPresenter: MapPresentationLogic {
     
     func presentDeliveryStatus(response: Map.DuringDelivery.Response) {
         var deliveryTime = ""
-        let cost = "Koszt dostawy to " + String(format: "%.2f", response.order.distance / 500.0) + " PLN"
+        let cost = "Koszt dostawy to " + String(format: "%.2f", response.order.deliveryCost) + " PLN"
         
         let currentTime = (Date.now + 3600).timeIntervalSinceReferenceDate
         let deliveryEndTime = (response.order.deliveryEndTime ?? Date()).timeIntervalSinceReferenceDate

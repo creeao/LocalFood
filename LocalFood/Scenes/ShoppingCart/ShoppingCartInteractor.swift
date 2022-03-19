@@ -23,7 +23,7 @@ extension ShoppingCartInteractor: ShoppingCartBusinessLogic {
     }
     
     func makeOrder(request: ShoppingCart.MakeOrder.Request) {
-        guard let selectedPlace = Orders.shared.selectedPlace else { return }
+        guard let selectedPlace = Orders.shared.getSelectedPlace() else { return }
         let products = Basket.shared.getProducts()
         Orders.shared.makeOrder(products: products, place: selectedPlace)
     }

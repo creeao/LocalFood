@@ -56,6 +56,14 @@ extension MapViewController: MapDisplayLogic {
         popup.alpha = 0
         deliveryStatus.setup(status: viewModel.status, placeName: viewModel.place.name, cost: viewModel.cost, time: viewModel.deliveryTime)
         deliveryStatus.alpha = 1
+        
+    }
+}
+
+// MARK: DeliveryStatusDelegate
+extension MapViewController: DeliveryStatusDelegate {
+    func showOrderInfornations() {
+        router?.routeToReceipt()
     }
 }
 
@@ -69,7 +77,7 @@ extension MapViewController: MKMapViewDelegate {
         guard let coordinate = view.annotation?.coordinate else { return }
         selectedPlace = mapPlaces?.first(where: { $0.latitude == coordinate.latitude && $0.longitude == coordinate.longitude })
         centerView(with: coordinate)
-        Orders.shared.selectedPlace = selectedPlace
+        Orders.shared.setSelectedPlace(place: selectedPlace)
         makePolyline()
     }
 
@@ -91,12 +99,16 @@ private extension MapViewController {
         interactor?.prepareDeliveryStatus(request: .init())
     }
     
-    @objc private func openButtonTapped() {
+    @objc func openButtonTapped() {
         router?.routeToPlace()
     }
     
     @objc func appMovedToBackground() {
         checkOrderStatus()
+    }
+    
+    @objc func menuButtonTapped() {
+        router?.routeToMenu()
     }
 }
 
@@ -110,8 +122,17 @@ private extension MapViewController {
         setupDeliveryStatusView()
         
         setupLocationManager()
-        setupBackButton()
+        setupNavigationBar()
         setupAppMovedToBackground()
+    }
+    
+    func setupNavigationBar() {
+        let menuIcon = UIImage(systemName: "line.3.horizontal.decrease.circle.fill")
+        let menuItem = UIBarButtonItem(image: menuIcon, style: .done, target: self, action: #selector(menuButtonTapped))
+        
+        navigationItem.setHidesBackButton(true, animated: false)
+        navigationItem.rightBarButtonItem = menuItem
+        navigationItem.rightBarButtonItem?.tintColor = UIColor(named: "lightGray")
     }
     
     func setupLocationManager() {
@@ -206,6 +227,7 @@ private extension MapViewController {
         view.addSubview(deliveryStatus)
         deliveryStatus.translatesAutoresizingMaskIntoConstraints = false
         deliveryStatus.alpha = 0
+        deliveryStatus.delegate = self
 
         NSLayoutConstraint.activate([
             deliveryStatus.heightAnchor.constraint(equalToConstant: 230),
@@ -277,9 +299,9 @@ private extension MapViewController {
                 let distance = response?.routes[0].distance
                 let time = response?.routes[0].expectedTravelTime
 
-                Orders.shared.polyline = polyline
-                Orders.shared.distance = distance
-                Orders.shared.time = (time ?? 0.0) / 60 + 15
+                Orders.shared.setPolyline(polyline)
+                Orders.shared.setDistance(distance)
+                Orders.shared.setTime((time ?? 0.0) / 60 + 15)
             }
         }
     }

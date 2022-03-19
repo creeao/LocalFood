@@ -48,6 +48,8 @@ protocol MapRoutingLogicDelegate: class {}
 protocol MapRoutingLogic: class {
     var delegate: MapRoutingLogicDelegate? { get set }
     func routeToPlace()
+    func routeToReceipt()
+    func routeToMenu()
 }
 
 typealias MapScene = (UIViewController & MapDisplayLogic)

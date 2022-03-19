@@ -21,7 +21,7 @@ class SelectedProductPopup: UIView {
     private var increaseButton = UIButton()
     private var addButton = UIButton()
     
-    private var product = Product(name: "", price: 0.0)
+    private var product = Product(name: "", price: 0.0, quantity: 0.0, type: .kilograms)
     
     var count: Int = 1
     
@@ -40,8 +40,11 @@ class SelectedProductPopup: UIView {
         product = newProduct
         productName.text = product.name
     }
-    
-    private func setupView() {
+}
+
+// MARK: Private
+private extension SelectedProductPopup {
+    func setupView() {
         backgroundColor = UIColor(named: "white")
         layer.cornerRadius = 15
         alpha = 0
@@ -56,7 +59,7 @@ class SelectedProductPopup: UIView {
         setupAddButton()
     }
     
-    private func setupExitButton() {
+    func setupExitButton() {
         addSubview(exitButton)
         exitButton.translatesAutoresizingMaskIntoConstraints = false
         
@@ -73,7 +76,7 @@ class SelectedProductPopup: UIView {
         ])
     }
     
-    private func setupProductName() {
+    func setupProductName() {
         addSubview(productName)
         productName.translatesAutoresizingMaskIntoConstraints = false
         productName.font = UIFont.systemFont(ofSize: 16.0, weight: .semibold)
@@ -85,7 +88,7 @@ class SelectedProductPopup: UIView {
         ])
     }
     
-    private func setupCountContainerView() {
+    func setupCountContainerView() {
         addSubview(countContainer)
         countContainer.translatesAutoresizingMaskIntoConstraints = false
         
@@ -100,7 +103,7 @@ class SelectedProductPopup: UIView {
         setupIncreaseButton()
     }
 
-    private func setupDecreaseButton() {
+    func setupDecreaseButton() {
         countContainer.addSubview(decreaseButton)
         decreaseButton.translatesAutoresizingMaskIntoConstraints = false
         decreaseButton.addTarget(self, action: #selector(decreaseCount), for: .touchUpInside)
@@ -114,7 +117,7 @@ class SelectedProductPopup: UIView {
         ])
     }
 
-    private func setupCountLabel() {
+    func setupCountLabel() {
         countContainer.addSubview(countLabel)
         countLabel.translatesAutoresizingMaskIntoConstraints = false
         countLabel.text = "\(count)"
@@ -128,7 +131,7 @@ class SelectedProductPopup: UIView {
         ])
     }
 
-    private func setupIncreaseButton() {
+    func setupIncreaseButton() {
         countContainer.addSubview(increaseButton)
         increaseButton.translatesAutoresizingMaskIntoConstraints = false
         increaseButton.addTarget(self, action: #selector(increaseCount), for: .touchUpInside)
@@ -142,7 +145,7 @@ class SelectedProductPopup: UIView {
         ])
     }
     
-    private func setupAddButton() {
+    func setupAddButton() {
         addSubview(addButton)
         addButton.translatesAutoresizingMaskIntoConstraints = false
         addButton.setupPrimaryView(with: "Dodaj do koszyka")
@@ -157,17 +160,17 @@ class SelectedProductPopup: UIView {
         ])
     }
     
-    @objc private func decreaseCount() {
+    @objc func decreaseCount() {
         count > 0 ? count -= 1 : nil
         countLabel.text = "\(count)"
     }
     
-    @objc private func increaseCount() {
+    @objc func increaseCount() {
         count += 1
         countLabel.text = "\(count)"
     }
     
-    @objc private func addProduct() {
+    @objc func addProduct() {
         for _ in 1...count {
             Basket.shared.addProduct(product)
         }
@@ -182,7 +185,7 @@ class SelectedProductPopup: UIView {
         deleagte?.addProduct()
     }
     
-    @objc private func exitAction() {
+    @objc func exitAction() {
         UIView.animate(withDuration: 0.2) {
             self.alpha = 0
         } completion: { _ in

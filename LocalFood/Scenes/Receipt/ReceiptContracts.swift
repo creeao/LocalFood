@@ -44,7 +44,6 @@ protocol ReceiptRoutingLogicDelegate: class {}
 
 protocol ReceiptRoutingLogic: class {
     var delegate: ReceiptRoutingLogicDelegate? { get set }
-//    func routeToMap()
 }
 
 typealias ReceiptScene = (UIViewController & ReceiptDisplayLogic)

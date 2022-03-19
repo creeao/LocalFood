@@ -17,9 +17,11 @@ final class ReceiptInteractor: ReceiptDataStore {
 // MARK: ReceiptBusinessLogic
 extension ReceiptInteractor: ReceiptBusinessLogic {
     func prepareContent(request: Receipt.Content.Request) {
-        // TODO: Request wykorzystujący id które przychodzi
-        let products = [Product(name: "Mleko", price: 2.60), Product(name: "Ser", price: 4.20)]
-        let response = Receipt.Content.Response(products: products)
+        guard let order = Orders.shared.getOrders().last else { return }
+        let response = Receipt.Content.Response(
+            placeName: order.place.name,
+            products: order.products,
+            orderValue: order.cost + order.deliveryCost)
         presenter?.presentContent(response: response)
     }
 }

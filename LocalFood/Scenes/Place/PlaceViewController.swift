@@ -31,7 +31,7 @@ final class PlaceViewController: UIViewController, PlaceRoutingLogicDelegate {
 
 // MARK: Private
 private extension PlaceViewController {
-    private func setup() {
+    func setup() {
         view.backgroundColor = UIColor(named: "white")
         setupTitleLabel()
         setupDescriptionLabel()
@@ -41,7 +41,7 @@ private extension PlaceViewController {
         setupNotification()
     }
     
-    private func setupNotification() {
+    func setupNotification() {
         view.addSubview(notification)
         notification.translatesAutoresizingMaskIntoConstraints = false
         
@@ -53,8 +53,7 @@ private extension PlaceViewController {
         ])
     }
 
-
-    private func setupTitleLabel() {
+    func setupTitleLabel() {
         view.addSubview(titleLabel)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.font = UIFont.systemFont(ofSize: 25.0, weight: .bold)
@@ -67,7 +66,7 @@ private extension PlaceViewController {
         ])
     }
 
-    private func setupDescriptionLabel() {
+    func setupDescriptionLabel() {
         view.addSubview(descriptionLabel)
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel.font = UIFont.systemFont(ofSize: 18.0, weight: .semibold)
@@ -80,7 +79,7 @@ private extension PlaceViewController {
         ])
     }
 
-    private func setupTableView() {
+    func setupTableView() {
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.delegate = self
@@ -97,7 +96,7 @@ private extension PlaceViewController {
         ])
     }
     
-    private func setupPopup() {
+    func setupPopup() {
         view.addSubview(popup)
         popup.translatesAutoresizingMaskIntoConstraints = false
         popup.deleagte = self
@@ -111,7 +110,7 @@ private extension PlaceViewController {
         ])
     }
     
-    private func setupNavigationBar() {
+    func setupNavigationBar() {
         setupBackButton()
         let shoppingCartIcon = UIImage(systemName: "cart.fill")
         let shoppingCartItem = UIBarButtonItem(image: shoppingCartIcon, style: .done, target: self, action: #selector(routeToShoppingCart))
@@ -120,13 +119,15 @@ private extension PlaceViewController {
         navigationItem.rightBarButtonItem?.tintColor = UIColor(named: "darkGray")
     }
     
-    @objc private func routeToShoppingCart() {
+    @objc func routeToShoppingCart() {
         router?.routeToShoppingCart()
     }
+}
 
-    private func prepareContent() {
-        let request = Place.Content.Request()
-        interactor?.prepareContent(request: request)
+// MARK: Actions
+private extension PlaceViewController {
+    func prepareContent() {
+        interactor?.prepareContent(request: .init())
     }
 }
 
@@ -136,7 +137,7 @@ extension PlaceViewController: PlaceDisplayLogic {
         DispatchQueue.main.async {
             self.titleLabel.text = viewModel.place.name
             self.descriptionLabel.text = viewModel.place.description
-            viewModel.place.categories.first?.products.forEach {
+            viewModel.place.products.forEach {
                 self.products.append($0)
             }
             self.tableView.reloadData()

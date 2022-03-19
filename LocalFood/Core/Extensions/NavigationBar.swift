@@ -10,13 +10,13 @@ import UIKit
 extension UIViewController {
     func setupBackButton() {
         let backIcon = UIImage(systemName: "chevron.backward")
-        let backItem = UIBarButtonItem(image: backIcon, style: .done, target: self, action: #selector(routeToPreviousScreen))
+        let backItem = UIBarButtonItem(image: backIcon, style: .done, target: self, action: #selector(goToPreviousScreen))
         
         navigationItem.leftBarButtonItem = backItem
         navigationItem.leftBarButtonItem?.tintColor = UIColor(named: "darkGray")
     }
     
-    @objc private func routeToPreviousScreen() {
+    @objc private func goToPreviousScreen() {
         navigationController?.popViewController(animated: true)
     }
 }
