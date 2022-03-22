@@ -56,7 +56,7 @@ private extension ReceiptsViewController {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.font = UIFont.systemFont(ofSize: 25.0, weight: .bold)
         titleLabel.textColor = UIColor(named: "black")
-        titleLabel.text = "Receipts"
+        titleLabel.text = "Twoje zamówienia"
 
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
